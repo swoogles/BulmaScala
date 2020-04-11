@@ -1,6 +1,6 @@
 package crestedbutte.dom
 
-import org.scalajs.dom.html.Div
+import org.scalajs.dom.html.{Anchor, Div}
 import scalatags.JsDom
 
 object Bulma {
@@ -19,7 +19,7 @@ object Bulma {
       button(cls := "modal-close is-large", aria.label := "close")(),
     )
 
-  def menu(choices: Seq[JsDom.TypedTag[Div]]) =
+  def menu(choices: Seq[JsDom.TypedTag[Anchor]]) =
     div(id := "main-menu",
         cls := "navbar",
         role := "navigation",
