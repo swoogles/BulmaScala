@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>default</groupId>
+    <artifactId>bulmalibrary_sjs0.6_2.13</artifactId>
+    <packaging>jar</packaging>
+    <description>bulmalibrary</description>
+    <url>https://github.com/swoogles/BulmaLibrary</url>
+    <version>0.2</version>
+    <name>bulmalibrary</name>
+    <organization>
+        <name>default</name>
+        <url>https://github.com/swoogles/BulmaLibrary</url>
+    </organization>
+    <scm>
+        <url>https://github.com/swoogles/BulmaLibrary</url>
+        <connection>scm:git@github.com:swoogles/BulmaLibrary.git</connection>
+    </scm>
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-js</groupId>
+            <artifactId>scalajs-library_2.13</artifactId>
+            <version>0.6.31</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-js</groupId>
+            <artifactId>scalajs-test-bridge_2.13</artifactId>
+            <version>0.6.31</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.lihaoyi</groupId>
+            <artifactId>scalatags_sjs0.6_2.13</artifactId>
+            <version>0.8.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-js</groupId>
+            <artifactId>scalajs-dom_sjs0.6_2.13</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+</project>
