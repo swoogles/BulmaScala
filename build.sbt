@@ -10,4 +10,4 @@ libraryDependencies ++= Seq(
 )
 
 githubOwner := "swoogles"
-githubRepository := "BulmaLibrary"
+githubRepository := "BulmaScala"
