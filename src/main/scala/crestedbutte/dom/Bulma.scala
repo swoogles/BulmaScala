@@ -1,6 +1,7 @@
 package crestedbutte.dom
 
 import org.scalajs.dom.html.{Anchor, Button, Div, Input}
+import org.scalajs.dom.raw.HTMLElement
 import scalatags.JsDom
 
 object Bulma {
@@ -19,7 +20,7 @@ object Bulma {
     def basic(content: String): JsDom.TypedTag[Button] =
       basic(div(content))
 
-    def basic(content: JsDom.TypedTag[Div]): JsDom.TypedTag[Button] =
+    def basic(content: JsDom.TypedTag[HTMLElement]): JsDom.TypedTag[Button] =
       button(
         cls := "button"
       )(
