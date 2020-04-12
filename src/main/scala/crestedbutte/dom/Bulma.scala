@@ -11,7 +11,7 @@ object Bulma {
     div(id := idValue, cls := "modal")(
       div(cls := "modal-background")(),
       div(cls := "modal-content",
-          backgroundColor := "rgba(68, 68, 68, 1.0)",
+          backgroundColor := "rgba(68, 68, 68, 1.0)", // TODO Should be handled in clients
           marginLeft := "45px",
           marginRight := "45px")(
         content,
@@ -19,7 +19,8 @@ object Bulma {
       button(cls := "modal-close is-large", aria.label := "close")(),
     )
 
-  def menu(choices: Seq[JsDom.TypedTag[Anchor]]) =
+  // TODO Currently the parameters need to each have class "navbar-item". Super sneaky.
+  def menu(choices: Seq[JsDom.TypedTag[Anchor]], name: String) =
     div(id := "main-menu",
         cls := "navbar",
         role := "navigation",
@@ -38,7 +39,7 @@ object Bulma {
       div(id := "navbarBasicExample", cls := "navbar-menu")(
         div(cls := "navbar-start")(
           div(cls := "navbar-item has-dropdown is-hoverable")(
-            a(cls := "navbar-link")("Restaurants"),
+            a(cls := "navbar-link")(name),
             div(cls := "navbar-dropdown")(
               choices
             ),
