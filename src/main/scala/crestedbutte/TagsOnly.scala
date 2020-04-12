@@ -29,27 +29,4 @@ object TagsOnly {
       span(aria.hidden := "true"),
     )
 
-  def createBusTimeElement(
-    content: JsDom.TypedTag[Div],
-    footerItems: Seq[JsDom.TypedTag[Div]],
-  ): JsDom.TypedTag[Div] =
-    div(
-      width := "100%",
-      cls := "card",
-    )(
-      div(cls := "card-content")(
-        content,
-      ),
-      footer(cls := "card-footer")(
-        footerItems.map { footerItem =>
-          p(cls := "card-footer-item")(
-            span(
-              footerItem,
-            ),
-          )
-
-        },
-      ),
-    )
-
 }
