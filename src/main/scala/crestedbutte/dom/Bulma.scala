@@ -1,10 +1,46 @@
 package crestedbutte.dom
 
-import org.scalajs.dom.html.{Anchor, Div}
+import org.scalajs.dom.html.{Anchor, Button, Div, Input}
 import scalatags.JsDom
 
 object Bulma {
   import scalatags.JsDom.all._
+
+  object Button {
+
+    def anchor(content: String): JsDom.TypedTag[Anchor] =
+      a(
+        cls := "button"
+      )(
+        content
+      )
+
+
+    def basic(content: String): JsDom.TypedTag[Button] =
+      basic(div(content))
+
+    def basic(content: JsDom.TypedTag[Div]): JsDom.TypedTag[Button] =
+      button(
+        cls := "button"
+      )(
+        content
+      )
+
+    def submit(content: String): JsDom.TypedTag[Input] =
+      input(
+        `type` := "submit",
+        cls := "button"
+      )(
+        content
+      )
+    def reset(content: String): JsDom.TypedTag[Input] =
+      input(
+        `type` := "reset",
+        cls := "button"
+      )(
+        content
+      )
+  }
 
   def modal(content: JsDom.TypedTag[Div],
             idValue: String): JsDom.TypedTag[Div] =
@@ -19,7 +55,7 @@ object Bulma {
     )
 
   // TODO Currently the parameters need to each have class "navbar-item". Super sneaky.
-  def menu(choices: Seq[JsDom.TypedTag[Anchor]], name: String) =
+  def menu(choices: Seq[JsDom.TypedTag[Anchor]], name: String): JsDom.TypedTag[Div] =
     div(id := "main-menu",
         cls := "navbar",
         role := "navigation",
