@@ -6,12 +6,11 @@ import scalatags.JsDom
 object Bulma {
   import scalatags.JsDom.all._
 
-  def bulmaModal(content: JsDom.TypedTag[Div],
-                 idValue: String): JsDom.TypedTag[Div] =
+  def modal(content: JsDom.TypedTag[Div],
+            idValue: String): JsDom.TypedTag[Div] =
     div(id := idValue, cls := "modal")(
       div(cls := "modal-background")(),
       div(cls := "modal-content",
-          backgroundColor := "rgba(68, 68, 68, 1.0)", // TODO Should be handled in clients
           marginLeft := "45px",
           marginRight := "45px")(
         content,
@@ -41,7 +40,7 @@ object Bulma {
           div(cls := "navbar-item has-dropdown is-hoverable")(
             a(cls := "navbar-link")(name),
             div(cls := "navbar-dropdown")(
-              choices
+              choices.map(_.apply(cls:="navbar-item "))
             ),
           ),
         ),
