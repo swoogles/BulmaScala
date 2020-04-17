@@ -123,7 +123,7 @@ object Bulma {
         div(cls:="card-header-title")(
           headerContent
         ),
-        a(href:="#", cls:="card-header-icon", aria.label :="more options")(
+        a(cls:="card-header-icon", aria.label :="more options")(
           headerIcon
         )
       ),
