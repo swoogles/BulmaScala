@@ -109,4 +109,26 @@ object Bulma {
       ),
     )
 
+  def collapsedCard(
+            content: JsDom.TypedTag[Div],
+            footerItems: Seq[JsDom.TypedTag[Div]],
+          ): JsDom.TypedTag[Div] =
+    div(
+      width := "100%",
+      cls := "card",
+    )(
+      div(cls := "card-content is-hidden")(
+        content,
+      ),
+      footer(cls := "card-footer is-hidden")(
+        footerItems.map { footerItem =>
+          p(cls := "card-footer-item")(
+            span(
+              footerItem,
+            ),
+          )
+
+        },
+      ),
+    )
 }
