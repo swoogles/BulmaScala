@@ -109,7 +109,8 @@ object Bulma {
       ),
     )
 
-  def collapsedCard(
+  def collapsedCardWithHeader(
+            header:  JsDom.TypedTag[Div],
             content: JsDom.TypedTag[Div],
             footerItems: Seq[JsDom.TypedTag[Div]],
           ): JsDom.TypedTag[Div] =
@@ -117,6 +118,16 @@ object Bulma {
       width := "100%",
       cls := "card",
     )(
+      header(cls:="card-header")(
+        div(cls:="card-header-title")(
+          header
+        ),
+        a(href:="#", cls:="card-header-icon", aria.label :="more options")(
+          span(cls:="icon")(
+            i(cls:="fas fa-angle-down", aria.hidden:="true")
+          )
+        )
+      ),
       div(cls := "card-content is-hidden")(
         content,
       ),
