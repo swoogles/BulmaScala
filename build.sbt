@@ -2,6 +2,8 @@
 scalaVersion := "2.13.1"
 version := "0.2.14"
 
+organization := "com.billding"
+
 enablePlugins(ScalaJSPlugin)
 
 libraryDependencies ++= Seq(
