@@ -56,7 +56,7 @@ object Bulma {
     )
 
   // TODO Currently the parameters need to each have class "navbar-item". Super sneaky.
-  def menu(choices: Seq[JsDom.TypedTag[Anchor]], name: String): JsDom.TypedTag[Div] =
+  def menu(choices: Seq[JsDom.TypedTag[Anchor]], name: String, selectionClasses: String): JsDom.TypedTag[Div] =
     div(id := "main-menu",
         cls := "navbar",
         role := "navigation",
@@ -77,7 +77,7 @@ object Bulma {
           div(cls := "navbar-item has-dropdown is-hoverable")(
             a(cls := "navbar-link")(name),
             div(cls := "navbar-dropdown")(
-              choices.map(_.apply(cls:="navbar-item "))
+              choices.map(_.apply(cls:="navbar-item " + selectionClasses))
             ),
           ),
         ),
